@@ -16,11 +16,12 @@ const media = computed((): string => {
 <template>
   <li v-if="item" relative h-auto w-full overflow-hidden xl:h-full>
     <NuxtLink h-auto w-full lg:h-70 xl:h-full :to="{ name: `${media}-id`, params: { id: item.id } }">
-      <div h-full w-full flex items-center justify-center overflow-hidden bg-zinc-800 sm:h-auto>
-        <NuxtImg
-          v-if="item.poster_path" format="webp" h-full w-full duration-500 hover:scale-105
+      <div h-full w-full flex items-center justify-center overflow-hidden bg-zinc-800 md:h-70 sm:h-60 xl:h-80>
+        <img
+          v-if="item.poster_path"
+          loading="lazy" format="webp" h-full w-full duration-500 hover:scale-105
           :src="`https://image.tmdb.org/t/p/w370_and_h556_bestv2${item.poster_path}`"
-        />
+        >
         <span v-else>
           <Icon name="tabler:photo" text-white size="40" />
         </span>

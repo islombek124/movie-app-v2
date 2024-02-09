@@ -20,7 +20,7 @@ defineProps<{
         clickable: true,
       }" :navigation="true" :modules="[SwiperNavigation]"
     >
-      <SwiperSlide v-for="person in people" :key="`credit-${person.id}`" h-auto max-h-90  w-35 overflow-hidden lg:w-45 xl:h-full>
+      <SwiperSlide v-for="person in people" :key="`credit-${person.id}`" h-auto max-h-90 w-35 overflow-hidden sm:w-46 xl:h-full>
         <CreditsItem :person="person" />
       </SwiperSlide>
     </Swiper>

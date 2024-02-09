@@ -9,7 +9,7 @@ defineProps<{
 <template>
   <li v-if="person" relative h-auto w-full overflow-hidden xl:h-full>
     <NuxtLink h-auto w-full :to="{ name: 'person-id', params: { id: person.id } }">
-      <div relative h-full w-full flex items-center justify-center overflow-hidden bg-zinc-800 sm:h-auto>
+      <div relative h-full w-full flex items-center justify-center overflow-hidden bg-zinc-800 sm:h-70>
         <NuxtImg
           v-if="person.profile_path" format="webp" h-full w-full duration-500 hover:scale-105
           :src="`https://image.tmdb.org/t/p/w370_and_h556_bestv2${person.profile_path}`"

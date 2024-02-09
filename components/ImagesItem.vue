@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Image } from '~/types/Image'
 
-const props = defineProps<{
+defineProps<{
   image: Image
   index: number
   type: string
@@ -14,9 +14,6 @@ const emit = defineEmits<{
 function handleGallery(index: number) {
   emit('openModal', index)
 }
-
-console.log(props.image);
-
 </script>
 
 <template>

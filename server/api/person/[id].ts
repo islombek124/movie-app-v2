@@ -1,4 +1,4 @@
-export default defineEventHandler(async (e) => {
+export default defineEventHandler(async (e: any) => {
   const { API_KEY, API_LANG, API_URL } = useRuntimeConfig(e)
   const { id } = e.context.params
 
