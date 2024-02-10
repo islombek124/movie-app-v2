@@ -16,7 +16,7 @@ const media = computed(() => {
 <template>
   <li v-if="item" relative h-auto w-full overflow-hidden xl:h-full>
     <NuxtLink h-auto w-full lg:h-70 xl:h-full :to="{ name: `${media}-id` as any, params: { id: item.id as any } }">
-      <div h-full w-full flex items-center justify-center overflow-hidden bg-zinc-800 md:h-70 sm:h-60 xl:h-80>
+      <div h-full w-full flex items-center justify-center overflow-hidden bg-zinc-200 text-black dark:text-white dark:bg-zinc-800 md:h-70 sm:h-60 xl:h-80>
         <NuxtImg
           v-if="item.poster_path"
           :alt="item.name || item.title" h-full w-full duration-500 hover:scale-105
@@ -28,7 +28,7 @@ const media = computed(() => {
       </div>
 
       <h2
-        v-if="item.title || item.name" text="white nowrap lg:base sm left" hidden overflow-hidden truncate py-2
+        v-if="item.title || item.name" text="text-black dark:white nowrap lg:base sm left" hidden overflow-hidden truncate py-2
         sm:block
       >
         {{ item.title || item.name }}
@@ -39,7 +39,7 @@ const media = computed(() => {
             <div h-5 bg-no-repeat class="card_vote" :style="{ width: `${item.vote_average * 10}%` }" />
           </div>
         </div>
-        <div text-zinc-400>
+        <div text-zinc-700  dark:text-zinc-400>
           {{ item.vote_average }}
         </div>
       </div>

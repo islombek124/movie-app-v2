@@ -37,6 +37,12 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
 
+  routeRules: {
+    '/spa-route-rule': { ssr: false },
+    '/spa-route-rule/**': { ssr: false },
+    '/api/**': { cors: true },
+  },
+
   nitro: {
     esbuild: {
       options: {

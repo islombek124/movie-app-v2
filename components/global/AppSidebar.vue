@@ -10,8 +10,7 @@ function toggleSearch() {
 
 <template>
   <nav
-    fixed bottom-0 left-0 z-5 h-15 w-full flex-1 bg-black xl:right-auto xl:top-0 xl:h-full xl:w-25 xl:border-r
-    xl:border-r-zinc-800
+    fixed bottom-0 left-0 z-10 h-15 w-full flex-1 xl:right-auto xl:top-0 xl:h-full xl:w-25 xl:border-r dark:bg-black dark:xl:border-r-zinc-800
   >
     <ul h-full flex items-center justify-around xl:flex-col xl:justify-start xl:gap-y-20 xl:py-10>
       <li h-full w-full sm:h-auto>
@@ -70,6 +69,13 @@ function toggleSearch() {
 </template>
 
 <style scoped>
+svg g {
+  stroke: black;
+}
+
+.dark svg g {
+  stroke: white;
+}
 a.router-link-active {
   @apply text-teal-500;
 }

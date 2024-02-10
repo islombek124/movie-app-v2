@@ -68,7 +68,8 @@ useHead({
 <template>
   <main relative my-8 xl:ml-25>
     <Listing
-      v-if="items && items.results.length" :items="items" :title="title" :loading="loading"
+      v-if="items && items.results.length"
+      sm:mt-25 :items="items" :title="title" :loading="loading"
       @load-more="loadMore"
     />
   </main>

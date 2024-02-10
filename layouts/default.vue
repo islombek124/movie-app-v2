@@ -7,7 +7,6 @@ const searchStore = useSearchStore()
     <transition name="slide-down">
       <AppSearchInput v-if="searchStore.searchOpen" />
     </transition>
-    <Logo />
     <slot />
     <AppSidebar />
     <AppFooter />

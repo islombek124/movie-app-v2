@@ -32,7 +32,7 @@ const backdrop = computed(() => {
 
 <template>
   <div
-    relative top--8 block w-full flex flex-col justify-between overflow-hidden bg-black lg:h-md sm:h-lg xl:h-xl
+    relative top--8 block w-full flex flex-col justify-between overflow-hidden lg:h-md sm:h-lg xl:h-xl dark:bg-black
   >
     <div class="backdrop lg:w-8/11" relative right-0 top-0 w-full lg:ml-auto lg:h-md md:h-xs sm:h-lg xl:h-xl :class="{ 'h-60': !backdrop }">
       <NuxtImg
@@ -100,6 +100,15 @@ const backdrop = computed(() => {
   content: '';
   background-image: linear-gradient(
     to top,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+}
+
+.dark .backdrop::after {
+  background-image: linear-gradient(
+    to top,
     rgba(0, 0, 0, 1) 0%,
     rgba(0, 0, 0, 0.1) 50%,
     rgba(0, 0, 0, 0.1) 100%
@@ -107,10 +116,19 @@ const backdrop = computed(() => {
 }
 
 @media (min-width: 1025px) {
-  .backdrop::after {
+  .dark .backdrop::after {
     background-image: linear-gradient(
       to right,
       #000 0,
+      transparent 50%,
+      transparent 100%
+    );
+  }
+
+  .backdrop::after {
+    background-image: linear-gradient(
+      to right,
+      #fff 0,
       transparent 50%,
       transparent 100%
     );

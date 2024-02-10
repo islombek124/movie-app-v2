@@ -27,7 +27,7 @@ onMounted(() => scrollTrigger())
 </script>
 
 <template>
-  <div relative mx-3 my-8 mt-20 sm:mx-6 xl:mx-10 sm:mt-25>
+  <div relative mx-3 my-8 mt-20 sm:mx-6 xl:mx-10 sm:mt-13>
     <div v-if="title">
       <h1 v-if="title" mb-6 text-lg md:text-2xl>
         {{ title }}

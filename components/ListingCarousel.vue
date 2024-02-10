@@ -34,8 +34,8 @@ defineProps<{
       </SwiperSlide>
       <SwiperSlide v-if="viewAllUrl" h-60 w-40 overflow-hidden lg:w-53 xl:h-full sm:hover:cursor-pointer>
         <NuxtLink
-          h-full w-auto flex items-center justify-center bg-zinc-800 text-center text-white duration-500 lg:h-80
-          hover:scale-105 :to="viewAllUrl"
+
+          h-full w-auto flex items-center justify-center text-center bg-zinc-200 text-black duration-500 lg:h-80 hover:scale-105 dark:bg-zinc-800 dark:text-white :to="viewAllUrl"
         >
           {{ 'Explore All' }}
         </NuxtLink>
