@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { RouteLocationRaw } from '#vue-router'
 import type { APIResponse } from '~/types/APIResponse'
-import type { TV } from '~/types/Movie'
+import type { TV } from '~/types/TV'
 
 const { data: popular } = await useFetch<APIResponse>('/api/tv/popular')
 const { data: featured } = await useFetch<TV>(`/api/tv/${popular.value?.results[0].id}`)

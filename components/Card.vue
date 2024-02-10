@@ -3,7 +3,7 @@ const props = defineProps<{
   item: any
 }>()
 
-const media = computed((): string => {
+const media = computed(() => {
   if (props.item.media_type)
     return props.item.media_type
   else if (props.item.name)
@@ -15,7 +15,7 @@ const media = computed((): string => {
 
 <template>
   <li v-if="item" relative h-auto w-full overflow-hidden xl:h-full>
-    <NuxtLink h-auto w-full lg:h-70 xl:h-full :to="{ name: `${media}-id`, params: { id: item.id } }">
+    <NuxtLink h-auto w-full lg:h-70 xl:h-full :to="{ name: `${media}-id` as any, params: { id: item.id as any } }">
       <div h-full w-full flex items-center justify-center overflow-hidden bg-zinc-800 md:h-70 sm:h-60 xl:h-80>
         <NuxtImg
           v-if="item.poster_path"
