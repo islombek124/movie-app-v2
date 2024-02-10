@@ -3,6 +3,8 @@ const props = defineProps<{
   item: any
 }>()
 
+const img = useImage()
+
 const media = computed((): string => {
   if (props.item.media_type)
     return props.item.media_type
@@ -17,17 +19,20 @@ const media = computed((): string => {
   <li v-if="item" relative h-auto w-full overflow-hidden xl:h-full>
     <NuxtLink h-auto w-full lg:h-70 xl:h-full :to="{ name: `${media}-id`, params: { id: item.id } }">
       <div h-full w-full flex items-center justify-center overflow-hidden bg-zinc-800 md:h-70 sm:h-60 xl:h-80>
-        <img
+        <NuxtImg
           v-if="item.poster_path"
-          loading="lazy" format="webp" h-full w-full duration-500 hover:scale-105
+          :alt="item.name || item.title" h-full w-full duration-500 hover:scale-105
           :src="`https://image.tmdb.org/t/p/w370_and_h556_bestv2${item.poster_path}`"
-        >
+        />
         <span v-else>
           <Icon name="tabler:photo" text-white size="40" />
         </span>
       </div>
 
-      <h2 text="white nowrap lg:base sm left" hidden overflow-hidden truncate py-2 sm:block>
+      <h2
+        v-if="item.title || item.name" text="white nowrap lg:base sm left" hidden overflow-hidden truncate py-2
+        sm:block
+      >
         {{ item.title || item.name }}
       </h2>
       <div v-if="item.vote_average" hidden w-full items-center gap-3 text-sm sm:flex>

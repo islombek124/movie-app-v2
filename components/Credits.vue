@@ -14,11 +14,11 @@ defineProps<{
       </h2>
     </div>
     <Swiper
-      space-between="8" :style="{
+      :modules="[SwiperNavigation]" slides-per-view="auto" space-between="8" :style="{
         '--swiper-navigation-color': '#fff',
-      }" :css-mode="true" slides-per-view="auto" :pagination="{
+      }" :css-mode="true" :pagination="{
         clickable: true,
-      }" :navigation="true" :modules="[SwiperNavigation]"
+      }" :navigation="true"
     >
       <SwiperSlide v-for="person in people" :key="`credit-${person.id}`" h-auto max-h-90 w-35 overflow-hidden sm:w-46 xl:h-full>
         <CreditsItem :person="person" />

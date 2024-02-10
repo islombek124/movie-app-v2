@@ -20,11 +20,11 @@ defineProps<{
       </NuxtLink>
     </div>
     <Swiper
-      space-between="8" :style="{
+      :modules="[SwiperNavigation]" slides-per-view="auto" space-between="8" :style="{
         '--swiper-navigation-color': '#fff',
-      }" :css-mode="true" slides-per-view="auto" :pagination="{
+      }" :css-mode="true" :pagination="{
         clickable: true,
-      }" :navigation="true" :modules="[SwiperNavigation]"
+      }" :navigation="true"
     >
       <SwiperSlide
         v-for="item in items.results" :key="`card-${item.id}`" h-auto max-h-100 w-40 overflow-hidden lg:w-53

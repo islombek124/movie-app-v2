@@ -8,19 +8,18 @@ const props = defineProps<{
   images: any
 }>()
 
-const apiImgUrl: string = 'https://image.tmdb.org/t/p'
 const thumb = ref<any>()
 
 const imagesCount = computed(() => `${props.images.length} ${props.images.length > 1 ? 'Images' : 'Image'}`)
 
 if (props.type === 'poster')
-  thumb.value = `${apiImgUrl}/w370_and_h556_bestv2`
+  thumb.value = `https://image.tmdb.org/t/p/w370_and_h556_bestv2`
 else
-  thumb.value = `${apiImgUrl}/w533_and_h300_bestv2`
+  thumb.value = `https://image.tmdb.org/t/p/w533_and_h300_bestv2`
 
 props.images.map((image: Image) => {
   image.thumb = `${thumb.value}${image.file_path}`
-  image.src = `${apiImgUrl}/original${image.file_path}`
+  image.src = `original${image.file_path}`
 })
 </script>
 

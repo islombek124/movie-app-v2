@@ -8,6 +8,7 @@
     "dev": "nuxi dev",
     "generate": "nuxi generate",
     "postinstall": "nuxi prepare",
+    "cleanup": "npx nuxi cleanup .nuxt .output node_modules/.vite node_modules/.cache",
     "start": "node .output/server/index.mjs",
     "start:generate": "npx serve .output/public",
     "lint": "eslint .",
