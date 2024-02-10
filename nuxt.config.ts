@@ -22,7 +22,9 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     API_URL: 'https://api.themoviedb.org/3',
+    // eslint-disable-next-line node/prefer-global/process
     API_LANG: process.env.API_LANG || 'en-US',
+    // eslint-disable-next-line node/prefer-global/process
     API_KEY: process.env.API_KEY || '',
   },
 
