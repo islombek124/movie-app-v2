@@ -9,8 +9,8 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@vite-pwa/nuxt',
     'nuxt-module-eslint-config',
-    '@nuxt/image',
     'nuxt-swiper',
+    '@nuxt/image',
     'nuxt-icon',
   ],
 
@@ -30,7 +30,7 @@ export default defineNuxtConfig({
 
   css: [
     '@unocss/reset/tailwind.css',
-    './assets/css/global.css',
+    '~/assets/css/global.css',
   ],
 
   colorMode: {
