@@ -3,8 +3,6 @@ const props = defineProps<{
   item: any
 }>()
 
-const img = useImage()
-
 const media = computed((): string => {
   if (props.item.media_type)
     return props.item.media_type
