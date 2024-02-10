@@ -23,7 +23,7 @@ body,
   padding: 0;
 }
 
-html.dark {
+html {
   background: #141414;
   color: white;
 }
