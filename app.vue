@@ -28,10 +28,6 @@ html.dark {
   color: white;
 }
 
-.swiper-container .swiper-slide {
-  width: inherit !important;
-}
-
 .swiper-button-prev,
 .swiper-button-next {
   height: 100%;

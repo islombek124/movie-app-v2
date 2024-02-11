@@ -1,6 +1,11 @@
 <script setup lang="ts">
 const route = useRoute()
 const searchStore = useSearchStore()
+
+function toggleSearch() {
+  if (route.name !== 'search')
+    searchStore.toggleSearch()
+}
 </script>
 
 <template>

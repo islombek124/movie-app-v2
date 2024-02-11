@@ -36,55 +36,53 @@ const backdrop = computed(() => {
   >
     <div class="backdrop lg:w-8/11" relative right-0 top-0 w-full lg:ml-auto lg:h-md md:h-xs sm:h-lg xl:h-xl :class="{ 'h-60': !backdrop }">
       <NuxtImg
-        v-if="backdrop"
-        inline-block h-full w-full object-cover :src="backdrop" :alt="itemObj.name || itemObj.title"
+        v-if="backdrop" inline-block
+        h-full w-full object-cover :src="backdrop" :alt="itemObj.name || itemObj.title"
       />
     </div>
     <div class="lg:w-11/20" lg:absolute lg:bottom-0 lg:left-0 lg:top-0 lg:z-1 lg:h-full lg:flex lg:items-center>
-      <transition appear name="hero">
-        <div class="md:w-4/6" ml-0 w-full flex flex-col gap-y-6 p-4 md:ml-12 md:p-0>
-          <h1 text-2xl capitalize lg:text-3xl xl:text-4xl>
-            <template v-if="isSingle">
+      <div class="md:w-4/6" ml-0 w-full flex flex-col gap-y-6 p-4 md:ml-12 md:p-0>
+        <h1 text-xl capitalize lg:text-3xl sm:text-2xl xl:text-4xl>
+          <template v-if="isSingle">
+            {{ itemObj.name || itemObj.title }}
+          </template>
+          <template v-else>
+            <NuxtLink w-max :to="{ name: `${type}-id`, params: { id: itemObj.id } }">
               {{ itemObj.name || itemObj.title }}
-            </template>
-            <template v-else>
-              <NuxtLink w-max :to="{ name: `${type}-id`, params: { id: itemObj.id } }">
-                {{ itemObj.name || itemObj.title }}
-              </NuxtLink>
-            </template>
-          </h1>
-          <div w-full flex flex-col gap-3 text-zinc-400 sm:flex-row sm:items-center>
-            <!--  -->
-            <div flex items-center gap-3>
-              <div v-if="itemObj.vote_average" w-25 flex items-center>
-                <div h-5 w-full bg-no-repeat class="card_stars">
-                  <div h-5 bg-no-repeat class="card_vote" :style="{ width: `${itemObj.vote_average * 10}%` }" />
-                </div>
-              </div>
-              <!--  -->
-              <div text-nowrap>
-                <div v-if="itemObj.vote_count > 0">
-                  {{ itemObj.vote_count ? itemObj.vote_count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') : 0 }}
-                  Reviews
-                </div>
-              </div>
-            </div>
-            <!--  -->
-            <div flex items-center gap-3>
-              <span v-if="itemObj.number_of_seasons">Season {{ itemObj.number_of_seasons }}</span>
-              <span v-if="itemObj.release_date">{{ new Date(itemObj.release_date).getFullYear() }}</span>
-              <span v-if="itemObj.runtime">
-                {{ Math.floor(itemObj.runtime / 60) }}h
-                {{ itemObj.runtime % 60 }}min
-              </span>
-            </div>
+            </NuxtLink>
+          </template>
+        </h1>
+        <div w-full flex flex-col gap-3 text-zinc-400 sm:flex-row sm:items-center>
           <!--  -->
+          <div flex items-center gap-3>
+            <div v-if="itemObj.vote_average" w-25 flex items-center>
+              <div h-5 w-full bg-no-repeat class="card_stars">
+                <div h-5 bg-no-repeat class="card_vote" :style="{ width: `${itemObj.vote_average * 10}%` }" />
+              </div>
+            </div>
+            <!--  -->
+            <div text-nowrap>
+              <div v-if="itemObj.vote_count > 0">
+                {{ itemObj.vote_count ? itemObj.vote_count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') : 0 }}
+                Reviews
+              </div>
+            </div>
           </div>
-          <div v-if="itemObj.overview" mb-10 hidden md:block>
-            {{ itemObj.overview.length > 200 ? `${itemObj.overview.substring(0, 200)}...` : itemObj.overview }}
+          <!--  -->
+          <div flex items-center gap-3>
+            <span v-if="itemObj.number_of_seasons">Season {{ itemObj.number_of_seasons }}</span>
+            <span v-if="itemObj.release_date">{{ new Date(itemObj.release_date).getFullYear() }}</span>
+            <span v-if="itemObj.runtime">
+              {{ Math.floor(itemObj.runtime / 60) }}h
+              {{ itemObj.runtime % 60 }}min
+            </span>
           </div>
+          <!--  -->
         </div>
-      </transition>
+        <div v-if="itemObj.overview" mb-10 hidden md:block>
+          {{ itemObj.overview.length > 200 ? `${itemObj.overview.substring(0, 200)}...` : itemObj.overview }}
+        </div>
+      </div>
     </div>
   </div>
 </template>

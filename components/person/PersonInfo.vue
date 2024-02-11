@@ -24,7 +24,7 @@ const age = computed(() => {
     return false
 })
 
-function getAge(born, died) {
+function getAge(born: string, died?: string | null) {
   const startDate = new Date(born)
   let endDate
   let age
@@ -43,7 +43,7 @@ function getAge(born, died) {
   return age
 }
 
-function formatContent(string) {
+function formatContent(string: string) {
   return string.split('\n').filter(section => section !== '').map(section => `<p>${section}</p>`).join('')
 }
 </script>
@@ -60,6 +60,7 @@ function formatContent(string) {
     </div>
     <!-- right -->
     <div md:flex-1>
+      {{ age }}
       <div>
         <h2>{{ person.name }}</h2>
 
