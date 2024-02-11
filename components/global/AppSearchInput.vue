@@ -18,7 +18,7 @@ function goToRoute() {
   }
   else {
     router.push({
-      path: searchStore.value.fromPage,
+      name: 'index',
     })
   }
 }

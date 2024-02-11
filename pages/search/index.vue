@@ -11,6 +11,22 @@ const title = computed(() => query.value ? `Results For: ${query.value}` : '')
 const loading = ref<boolean>(false)
 const items = ref<APIResponse | any>()
 
+async function loadMore() {
+  loading.value = true
+
+  const { data } = await useFetch<APIResponse>(`/api/search`, {
+    params: {
+      q: query.value,
+      page: ++page.value,
+    },
+  })
+
+  items.value.results = items.value.results.concat(data.value?.results)
+  items.value.page = data.value?.page
+
+  loading.value = false
+}
+
 watchEffect(async () => {
   if (query.value) {
     loading.value = true
@@ -27,22 +43,6 @@ watchEffect(async () => {
     router.push({ name: 'index' })
   }
 })
-
-async function loadMore() {
-  loading.value = true
-
-  const { data } = await useFetch<APIResponse>(`/api/search`, {
-    params: {
-      q: query.value,
-      page: ++page.value,
-    },
-  })
-
-  items.value.page = data.value?.page
-  items.value.results = items.value.results.concat(data.value?.results)
-
-  loading.value = false
-}
 
 onMounted(() => {
   searchStore.openSearch()
@@ -66,7 +66,7 @@ useHead({
 </script>
 
 <template>
-  <main relative my-8 xl:ml-25>
+  <main relative my-15 xl:ml-25>
     <Listing
       v-if="items && items.results.length"
       sm:mt-25 :items="items" :title="title" :loading="loading"

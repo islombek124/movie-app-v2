@@ -23,9 +23,13 @@ body,
   padding: 0;
 }
 
-html {
+html.dark {
   background: #141414;
   color: white;
+}
+
+.swiper-container .swiper-slide {
+  width: inherit !important;
 }
 
 .swiper-button-prev,

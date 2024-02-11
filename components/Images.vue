@@ -31,7 +31,7 @@ props.images.map((image: Image) => {
       </h2>
       <strong text-sm text-zinc-400>{{ imagesCount }}</strong>
     </div>
-    <div flex flex-wrap>
+    <div flex flex-wrap gap-2>
       <ImagesItem v-for="(image, index) in images" :key="index" :image="image" :index="index" :type="type" />
     </div>
   </div>

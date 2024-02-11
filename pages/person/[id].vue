@@ -15,6 +15,7 @@ useHead({
 
 <template>
   <div relative mx-3 my-8 sm:mx-6 xl:mx-38>
-    <Images v-if="person?.images.profiles" title="Photos" type="poster" :images="person?.images.profiles" />
+    <PersonInfo :person="person" />
+    <!-- <Images v-if="person?.images.profiles" title="Photos" type="poster" :images="person?.images.profiles" /> -->
   </div>
 </template>

@@ -16,14 +16,15 @@ const media = computed(() => {
 <template>
   <li v-if="item" relative h-auto w-full overflow-hidden xl:h-full>
     <NuxtLink h-auto w-full lg:h-70 xl:h-full :to="{ name: `${media}-id` as any, params: { id: item.id as any } }">
-      <div h-full w-full flex items-center justify-center overflow-hidden bg-zinc-200 text-black dark:text-white dark:bg-zinc-800 md:h-70 sm:h-60 xl:h-80>
+      <div h-full w-full flex items-center justify-center overflow-hidden rounded-lg bg-zinc-200 text-black md:h-70 sm:h-60 xl:h-80 dark:bg-zinc-800 dark:text-white>
         <NuxtImg
           v-if="item.poster_path"
-          :alt="item.name || item.title" h-full w-full duration-500 hover:scale-105
+          lazy
+          :alt="item.name || item.title" h-full w-full rounded-md duration-500 hover:scale-105
           :src="`https://image.tmdb.org/t/p/w370_and_h556_bestv2${item.poster_path}`"
         />
         <span v-else>
-          <Icon name="tabler:photo" text-white size="40" />
+          <Icon name="tabler:photo" text-black dark:text-white size="40" />
         </span>
       </div>
 
@@ -39,7 +40,7 @@ const media = computed(() => {
             <div h-5 bg-no-repeat class="card_vote" :style="{ width: `${item.vote_average * 10}%` }" />
           </div>
         </div>
-        <div text-zinc-700  dark:text-zinc-400>
+        <div text-zinc-700 dark:text-zinc-400>
           {{ item.vote_average }}
         </div>
       </div>

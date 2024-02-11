@@ -28,8 +28,8 @@ async function loadMore() {
   })
 
   if (isLoaded) {
-    items.value.page = data.value?.page
     items.value.results = items.value.results.concat(data.value?.results)
+    items.value.page = data.value?.page
     loading.value = !isLoaded
   }
 }

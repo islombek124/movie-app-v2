@@ -8,6 +8,7 @@ export interface Person {
   birthday: string
   gender: number
   biography: string
+  deathday: string | null
   imdb_id: string
   known_for_department: string
   place_of_birth: string

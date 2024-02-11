@@ -20,7 +20,7 @@ function handleGallery(index: number) {
   <div v-if="image.thumb">
     <a :href="image.thumb" @click.prevent="handleGallery(index)">
       <div relative overflow-hidden>
-        <NuxtImg preload absolute left-0 top-0 h-full w-full :src="image.thumb" />
+        <NuxtImg preload h-80 w-50 :src="image.thumb" />
       </div>
     </a>
   </div>
