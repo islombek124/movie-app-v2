@@ -35,10 +35,12 @@ const backdrop = computed(() => {
     relative top--8 block w-full flex flex-col justify-between overflow-hidden lg:h-md sm:h-lg xl:h-xl dark:bg-black
   >
     <div class="backdrop lg:w-8/11" relative right-0 top-0 w-full lg:ml-auto lg:h-md md:h-xs sm:h-lg xl:h-xl :class="{ 'h-60': !backdrop }">
-      <NuxtImg
-        v-if="backdrop" inline-block
-        h-full w-full object-cover :src="backdrop" :alt="itemObj.name || itemObj.title"
-      />
+      <Transition name="fade">
+        <NuxtImg
+          v-if="backdrop" inline-block loading="lazy"
+          h-full w-full object-cover :src="backdrop" :alt="itemObj.name || itemObj.title"
+        />
+      </Transition>
     </div>
     <div class="lg:w-11/20" lg:absolute lg:bottom-0 lg:left-0 lg:top-0 lg:z-1 lg:h-full lg:flex lg:items-center>
       <div class="md:w-4/6" ml-0 w-full flex flex-col gap-y-6 p-4 md:ml-12 md:p-0>

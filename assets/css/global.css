@@ -27,6 +27,16 @@
   opacity: 1;
 }
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
 .slide-down-enter-active,
 .slide-down-leave-active {
   transition: all 0.2s;

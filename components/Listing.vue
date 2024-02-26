@@ -37,7 +37,9 @@ onMounted(() => scrollTrigger())
       v-if="items && items.results.length"
       xs:grid-cols-3 grid grid-cols-3 gap-2 lg:grid-cols-5 sm:grid-cols-4 xl:grid-cols-6 md:gap-y-5 sm:gap-y-6
     >
-      <Card v-for="item in items.results" :key="item.id" :item="item" />
+      <TransitionGroup name="fade">
+        <Card v-for="item in items.results" :key="item.id" :item="item" />
+      </TransitionGroup>
     </ul>
 
     <div v-if="items.page < items.total_pages" mt-5>
