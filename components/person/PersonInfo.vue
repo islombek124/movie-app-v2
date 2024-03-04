@@ -54,7 +54,7 @@ function formatContent(string: string) {
       <div relative>
         <NuxtImg v-if="avatar" :src="avatar" :alt="person.name" />
         <span v-else>
-          <Icon name="tabler:photo" text-black dark:text-white size="40" />
+          <Icon name="tabler:photo" text-white size="40" />
         </span>
       </div>
     </div>

@@ -52,7 +52,7 @@ onMounted(() => {
         <input
           id="search"
           ref="input" v-model.trim="query" type="text" placeholder="Search for a movie, tv show or person..." p="y4 x6 xl:x8 xl:y6"
-          w-full flex-1 border-0 text-black shadow-md outline-0 outline-none dark:bg-zinc-800 dark:text-white @keyup="goToRoute" @blur="unFocus"
+          w-full flex-1 border-0 bg-zinc-800 text-white shadow-md outline-0 outline-none @keyup="goToRoute" @blur="unFocus"
         >
 
         <button v-if="showButton" absolute right-3 xl:right-10 @click="goBack">

@@ -32,12 +32,12 @@ const backdrop = computed(() => {
 
 <template>
   <div
-    relative top--8 block w-full flex flex-col justify-between overflow-hidden lg:h-md sm:h-lg xl:h-xl dark:bg-black
+    relative top--8 block w-full flex flex-col justify-between overflow-hidden bg-black lg:h-md sm:h-lg xl:h-xl
   >
     <div class="backdrop lg:w-8/11" relative right-0 top-0 w-full lg:ml-auto lg:h-md md:h-xs sm:h-lg xl:h-xl :class="{ 'h-60': !backdrop }">
       <Transition name="fade">
         <NuxtImg
-          v-if="backdrop" inline-block loading="lazy"
+          v-if="backdrop" inline-block
           h-full w-full object-cover :src="backdrop" :alt="itemObj.name || itemObj.title"
         />
       </Transition>
@@ -106,7 +106,7 @@ const backdrop = computed(() => {
   );
 }
 
-.dark .backdrop::after {
+.backdrop::after {
   background-image: linear-gradient(
     to top,
     rgba(0, 0, 0, 1) 0%,
@@ -116,19 +116,10 @@ const backdrop = computed(() => {
 }
 
 @media (min-width: 1025px) {
-  .dark .backdrop::after {
-    background-image: linear-gradient(
-      to right,
-      #000 0,
-      transparent 50%,
-      transparent 100%
-    );
-  }
-
   .backdrop::after {
     background-image: linear-gradient(
       to right,
-      #fff 0,
+      #000 0,
       transparent 50%,
       transparent 100%
     );

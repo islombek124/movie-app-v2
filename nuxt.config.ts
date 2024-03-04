@@ -6,7 +6,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@unocss/nuxt',
     '@pinia/nuxt',
-    '@nuxtjs/color-mode',
     '@vite-pwa/nuxt',
     'nuxt-module-eslint-config',
     'nuxt-swiper',
@@ -32,10 +31,6 @@ export default defineNuxtConfig({
     '@unocss/reset/tailwind.css',
     '~/assets/css/global.css',
   ],
-
-  colorMode: {
-    classSuffix: '',
-  },
 
   nitro: {
     esbuild: {

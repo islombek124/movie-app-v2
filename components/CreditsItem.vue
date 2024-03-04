@@ -15,15 +15,15 @@ defineProps<{
           :src="`https://image.tmdb.org/t/p/w370_and_h556_bestv2${person.profile_path}`"
         />
         <span v-else>
-          <Icon name="tabler:photo" text-black dark:text-white size="40" />
+          <Icon name="tabler:photo" text-white size="40" />
         </span>
       </div>
 
-      <h2 text="black dark:white nowrap lg:base sm left" mt-2 overflow-hidden truncate>
+      <h2 text="white nowrap lg:base sm left" mt-2 overflow-hidden truncate>
         {{ person.name }}
       </h2>
 
-      <div text="zinc-500 dark:zinc-400 xs lg:sm" py-1>
+      <div text="zinc-400 xs lg:sm" py-1>
         {{ person.character }}
       </div>
     </NuxtLink>

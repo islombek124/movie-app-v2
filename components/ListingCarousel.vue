@@ -59,7 +59,7 @@ const breakpoints = {
       <SwiperSlide v-if="viewAllUrl" h-60 w-40 overflow-hidden lg:w-53 xl:h-full sm:hover:cursor-pointer>
         <NuxtLink
 
-          h-full w-auto flex items-center justify-center bg-zinc-200 text-center text-black duration-500 lg:h-80 hover:scale-105 dark:bg-zinc-800 dark:text-white :to="viewAllUrl"
+          h-full w-auto flex items-center justify-center bg-zinc-800 text-center text-white duration-500 lg:h-80 hover:scale-105 :to="viewAllUrl"
         >
           {{ 'Explore All' }}
         </NuxtLink>
@@ -67,3 +67,42 @@ const breakpoints = {
     </Swiper>
   </div>
 </template>
+
+<style>
+.swiper-button-prev,
+.swiper-button-next {
+  height: 100%;
+  width: 40px;
+  top: 22px;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s;
+  display: none;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.swiper-button-disabled {
+  display: none;
+}
+
+@media (min-width: 1280px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: flex;
+  }
+
+  .swiper-button-disabled {
+    display: none;
+  }
+}
+</style>

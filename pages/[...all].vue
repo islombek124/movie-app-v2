@@ -14,7 +14,7 @@ useHead({
 </script>
 
 <template>
-  <main p="x4 y25" text="center teal-600 dark:gray-200">
+  <main p="x4 y25" text="center gray-200">
     <div text-5xl>
       <div i-carbon-warning inline-block />
     </div>
