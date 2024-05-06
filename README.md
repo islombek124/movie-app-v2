@@ -20,8 +20,6 @@
 
 - 🦾 TypeScript, of course.
 
-- 📲 [PWA](https://github.com/vite-pwa/nuxt) with offline support and auto-update behavior.
-
 ## Plugins
 
 ### Nuxt Modules
@@ -30,7 +28,6 @@
 - [ColorMode](https://github.com/nuxt-modules/color-mode) - dark and Light mode with auto detection made easy with Nuxt.
 - [UnoCSS](https://github.com/unocss/unocss) - the instant on-demand atomic CSS engine.
 - [Pinia](https://github.com/vuejs/pinia) - intuitive, type safe, light and flexible Store for Vue.
-- [VitePWA](https://github.com/vite-pwa/nuxt) - zero-config PWA Plugin for Nuxt 3.
 - [DevTools](https://github.com/nuxt/devtools) - unleash Nuxt Developer Experience.
 
 ## IDE

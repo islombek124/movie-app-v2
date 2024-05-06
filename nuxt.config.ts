@@ -1,4 +1,4 @@
-import { pwa } from './config/pwa'
+/* eslint-disable node/prefer-global/process */
 import { appDescription } from './constants/index'
 
 export default defineNuxtConfig({
@@ -6,24 +6,15 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@unocss/nuxt',
     '@pinia/nuxt',
-    '@vite-pwa/nuxt',
     'nuxt-module-eslint-config',
     'nuxt-swiper',
     '@nuxt/image',
     'nuxt-icon',
   ],
 
-  experimental: {
-    payloadExtraction: false,
-    renderJsonPayloads: true,
-    typedPages: true,
-  },
-
   runtimeConfig: {
     API_URL: 'https://api.themoviedb.org/3',
-    // eslint-disable-next-line node/prefer-global/process
     API_LANG: process.env.API_LANG || 'en-US',
-    // eslint-disable-next-line node/prefer-global/process
     API_KEY: process.env.API_KEY || '',
   },
 
@@ -31,6 +22,12 @@ export default defineNuxtConfig({
     '@unocss/reset/tailwind.css',
     '~/assets/css/global.css',
   ],
+
+  experimental: {
+    payloadExtraction: false,
+    renderJsonPayloads: true,
+    typedPages: true,
+  },
 
   nitro: {
     esbuild: {
@@ -60,8 +57,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-
-  pwa,
 
   devtools: {
     enabled: true,

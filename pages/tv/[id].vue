@@ -2,7 +2,7 @@
 import type { APIResponse } from '~/types/APIResponse'
 import type { TV } from '~/types/TV'
 
-const { id } = useRoute().params
+const id = useRoute().params.id
 
 const { data: item } = await useFetch<TV>(`/api/tv/${id}`)
 const { data: recommend } = await useFetch<APIResponse>(`/api/tv/${id}/recommend`)

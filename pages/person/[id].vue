@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Person } from '~/types/Person'
 
-const { id } = useRoute().params
+const id = useRoute().params.id
 
 const { data: person } = await useFetch<Person>(`/api/person/${id}`)
 
