@@ -18,6 +18,11 @@ useHead({
     { name: 'description', content: item.value?.overview },
   ],
 })
+
+useSeoMeta({
+  title: item.value?.title,
+  ogImage:  item.value?.poster_path
+})
 </script>
 
 <template>
